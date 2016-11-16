@@ -10,7 +10,49 @@
     tools:context="com.epicodus.bogglish.MainActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/boggleLettersTextView"
+        android:layout_above="@+id/inputEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/rulesTextView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputEditText"
+        android:hint="Add a word"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="43dp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Boggle Solitaire Rules: Play the game."
+        android:id="@+id/rulesTextView"
+        android:layout_alignParentTop="true"
+        android:textSize="24sp"
+        android:textIsSelectable="false"
+        android:layout_toLeftOf="@+id/allWordsButton"
+        android:layout_toStartOf="@+id/allWordsButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add it!"
+        android:id="@+id/addWordButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your words"
+        android:id="@+id/allWordsButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/boggleLettersTextView" />
 </RelativeLayout>
