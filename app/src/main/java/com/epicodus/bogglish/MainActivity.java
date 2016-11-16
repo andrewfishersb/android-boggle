@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -61,13 +62,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(v == mAddWordButton){
             String wordToAdd = mInputEditText.getText().toString();
-            //if less than 2 error toast
-            //if doesnt contain all 3 letters toast
-            //if already exists  toast
+            if(wordToAdd.length()<3){
+                Toast.makeText(MainActivity.this,"Must be at least 3 letters",Toast.LENGTH_SHORT).show();
+            } else if(boggleWords.contains(wordToAdd)) {
+                Toast.makeText(MainActivity.this, "You already used that word!", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(MainActivity.this, "Yeah!", Toast.LENGTH_SHORT).show();
+                boggleWords.add(wordToAdd);
+            }
 
 
 
-            boggleWords.add(wordToAdd);
+
+
+
+
+            //if doesnt contain all  letters toast
+                //check for repeated letters
+
+
+
+
 
 
 
